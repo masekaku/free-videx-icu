@@ -11,7 +11,7 @@ interface Video {
 async function getVideosData(): Promise<Video[]> {
   try {
     const baseUrl = process.env.NODE_ENV === 'production' 
-      ? 'https://yourdomain.com'  // GANTI INI SETELAH DEPLOY!
+      ? 'https://free-videx-icu.pages.dev'  // GANTI INI SETELAH DEPLOY!
       : 'http://localhost:3000';
     
     const res = await fetch(`${baseUrl}/videos.json`, {
