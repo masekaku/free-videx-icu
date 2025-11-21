@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://yourdomain.com/api/sitemap
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 1
+Sitemap: https://yourdomain.com/api/sitemap
