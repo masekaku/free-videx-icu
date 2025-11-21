@@ -1,0 +1,40 @@
+[
+  {
+    "id": "bigbuck",
+    "title": "Big Buck Bunny",
+    "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+  },
+  {
+    "id": "elephants", 
+    "title": "Elephants Dream",
+    "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+  },
+  {
+    "id": "forrest",
+    "title": "Forrest",
+    "src": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Forrest.mp4"
+  }
+  
+  // 💰💵 TAMBAH VIDEO BARU DARI SEMUA HOSTING:
+  // {
+  //   "id": "video-bunny",
+  //   "title": "Video dari Bunny CDN",
+  //   "src": "https://vz-123abc.b-cdn.net/video.mp4"
+  // },
+  // {
+  //   "id": "video-vimeo",
+  //   "title": "Video dari Vimeo", 
+  //   "src": "https://vimeo.com/123456789"
+  // },
+  // {
+  //   "id": "video-youtube",
+  //   "title": "Video dari YouTube",
+  //   "src": "https://youtube.com/embed/abc123"
+  // },
+  // {
+  //   "id": "video-custom",
+  //   "title": "Video dari Hosting Sendiri",
+  //   "src": "https://cdn.domain-saya.com/video.mp4"
+  // }
+  // 💰 Copy-paste format di atas untuk tambah 100+ video dari hosting apapun!
+]
