@@ -8,44 +8,38 @@ interface Video {
   src: string;
 }
 
+// Static video data
+const videosData = [
+  {
+    id: 'bigbuck',
+    title: 'Big Buck Bunny',
+    src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+  },
+  {
+    id: 'elephants',
+    title: 'Elephants Dream',
+    src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
+  },
+  {
+    id: 'forrest',
+    title: 'Forrest',
+    src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Forrest.mp4'
+  }
+];
+
 export default function Home() {
-  const [videos, setVideos] = useState<Video[]>([]);
   const [currentVideo, setCurrentVideo] = useState<Video | null>(null);
 
   useEffect(() => {
-    // 🛡️ Use secure API instead of direct JSON access
-    fetch('/api/videos')
-      .then(r => r.json())
-      .then((data: Video[]) => {
-        setVideos(data);
-        setCurrentVideo(data[0]); // Auto-play first video
-      })
-      .catch(() => {
-        // Fallback jika API gagal
-        const fallbackVideo: Video = {
-          id: 'bigbuck',
-          title: 'Big Buck Bunny',
-          src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
-        };
-        setVideos([fallbackVideo]);
-        setCurrentVideo(fallbackVideo);
-      });
+    // Auto-play first video
+    setCurrentVideo(videosData[0]);
   }, []);
 
   const handleVideoEnd = () => {
-    if (videos.length > 0 && currentVideo) {
-      const currentIndex = videos.findIndex(v => v.id === currentVideo.id);
-      const nextIndex = (currentIndex + 1) % videos.length;
-      
-      // 🛡️ Fetch next video securely via API
-      fetch(`/api/videos?id=${videos[nextIndex].id}`)
-        .then(r => r.json())
-        .then((nextVideo: Video) => {
-          setCurrentVideo(nextVideo);
-        })
-        .catch(() => {
-          setCurrentVideo(videos[nextIndex]);
-        });
+    if (currentVideo) {
+      const currentIndex = videosData.findIndex(v => v.id === currentVideo.id);
+      const nextIndex = (currentIndex + 1) % videosData.length;
+      setCurrentVideo(videosData[nextIndex]);
     }
   };
 
