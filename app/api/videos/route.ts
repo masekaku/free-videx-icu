@@ -10,7 +10,7 @@ export async function GET(request: Request) {
   try {
     // 🛡️ Fetch from protected JSON (server-side only)
     const baseUrl = process.env.NODE_ENV === 'production' 
-      ? 'https://yourdomain.com'  // GANTI INI SETELAH DEPLOY!
+      ? 'https://free-videx-icu.pages.dev'  // GANTI INI SETELAH DEPLOY!
       : 'http://localhost:3000';
     
     const videosData: Video[] = await fetch(`${baseUrl}/videos.json`).then(r => r.json());
